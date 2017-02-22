@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,9 +26,13 @@ namespace _02PrzywodcaCiagu {
 
         static void Main(string[] args) {
             int[] A = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 4, 6, 8, 4, 6, 4 };
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
             int wynik = PrzywodcaCiagu(A);
+            stopwatch.Stop();
 
-            Console.WriteLine("Wynik = {0}", wynik);
+            Console.WriteLine("Wynik = {0}, milis ={1}", 
+                wynik,stopwatch.ElapsedMilliseconds);
         }
     }
 }
