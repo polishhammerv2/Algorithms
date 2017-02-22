@@ -1,0 +1,20 @@
+Zadanie 1
+-----------
+Zaimplementowaæ i zrozumieæ dzia³anie algorytmów zamieszczonych na stronie:
+https://goo.gl/qP7xwE
+w sekcji: Poprawnoœæ i z³o¿onoœæ 10 prostych algorytmów
+Dla ka¿dego algorytmu oszacowaæ ile opracji musi wykonaæ w najlepszym, najgorszym oraz œrednim przypadku
+na danych o rozmiarze n.
+
+Zadanie 2
+-----------
+U¿yæ programu 01Pomiary do oszacowania z³o¿onoœci wybranych algorytmów z zadania 1.
+
+Zadanie 3
+-----------
+Zaimplementowaæ dowolny przyk³ad algorytmu i uzasadniæ jego z³o¿onoœæ dla z³o¿onoœci:
+- O(n) = n
+- O(n) = n * log(n)
+- O(n) = n * n
+- O(n) = n * n * n
+- O(n) = 2^n

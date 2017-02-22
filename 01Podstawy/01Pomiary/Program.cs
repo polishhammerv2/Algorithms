@@ -43,7 +43,7 @@ namespace _01Pomiary {
             return result;
         }
         static long benchmarkKw(int n) {
-            return 5 * n * n + n + 7;
+            return  n * n - n + 7;
         }
 
         static void testAlgorithm(Func<int, double> myFunc, Func<int, long> myBench,
