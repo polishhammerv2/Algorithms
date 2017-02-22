@@ -11,7 +11,7 @@ namespace _02PrzywodcaCiagu {
             int j = 0;
             int n = A.Length;
 
-            for (int i = 1; i <= n; i++)
+            for (int i = 0; i < n; i++)
                 if (ile == 0) {
                     ile = ile + 1;
                     j = i;
@@ -24,6 +24,10 @@ namespace _02PrzywodcaCiagu {
         }
 
             static void Main(string[] args) {
+            int[] A = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 4, 6, 8, 4, 6, 4 };
+            int wynik = PrzywodcaCiagu(A);
+
+            Console.WriteLine("Wynik = {0}", wynik);
         }
     }
 }
