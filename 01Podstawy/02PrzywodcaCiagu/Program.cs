@@ -25,7 +25,13 @@ namespace _02PrzywodcaCiagu {
         }
 
         static void Main(string[] args) {
-            int[] A = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 4, 6, 8, 4, 6, 4 };
+            int N = 1000;
+            int[] A = new int[N];
+            Random randNum = new Random();
+
+            for (int i = 0; i < N; i++)
+                A[i] = randNum.Next(10);
+
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
             int wynik = PrzywodcaCiagu(A);
