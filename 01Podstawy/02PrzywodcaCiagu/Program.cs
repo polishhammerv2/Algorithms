@@ -7,6 +7,14 @@ using System.Threading.Tasks;
 
 namespace _02PrzywodcaCiagu {
     class Program {
+        static long SumaTabliczkiMnozenia(int n) {
+            long suma = 0;
+            for (int i = 1; i <= n; i++)
+                for (int j = 1; j <= n; j++)
+                    suma += i * j;
+            return suma;
+        }
+
         static int PrzywodcaCiagu(int[] A) {
             int ile = 0;
             int j = 0;
@@ -25,16 +33,17 @@ namespace _02PrzywodcaCiagu {
         }
 
         static void Main(string[] args) {
-            int N = 1000;
-            int[] A = new int[N];
-            Random randNum = new Random();
+            int N = 4000;
+            //int[] A = new int[N];
+            //Random randNum = new Random();
 
-            for (int i = 0; i < N; i++)
-                A[i] = randNum.Next(10);
+            //for (int i = 0; i < N; i++)
+            //    A[i] = randNum.Next(10);
 
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            int wynik = PrzywodcaCiagu(A);
+            long wynik = SumaTabliczkiMnozenia(N);
+            //int wynik = PrzywodcaCiagu(A);
             stopwatch.Stop();
 
             Console.WriteLine("Wynik = {0}, milis ={1}", 
