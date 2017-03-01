@@ -23,8 +23,8 @@ namespace _01Pomiary {
             return result;
         }
 
-        static long benchmarkLin(int n) {
-            return n + 7;
+        static double benchmarkLin(long n) {
+            return (n + 7) / 5650.0;
         }
 
         static double mnozenieKwadrat(int n) {
@@ -42,11 +42,11 @@ namespace _01Pomiary {
                     result += w1[i] * w2[j];
             return result;
         }
-        static long benchmarkKw(int n) {
-            return  n * n - n + 7;
+        static double benchmarkKw(long n) {
+            return (n * n / (100.0) + n ) / 650;
         }
 
-        static void testAlgorithm(Func<int, double> myFunc, Func<int, long> myBench,
+        static void testAlgorithm(Func<int, double> myFunc, Func<long, double> myBench,
             int n_start, int n_stop, int step) {
             Stopwatch stopwatch = new Stopwatch();
 
@@ -54,14 +54,16 @@ namespace _01Pomiary {
                 stopwatch.Start();
                 myFunc(i);
                 stopwatch.Stop();
-                Console.WriteLine("{0}: {1}: {2}", i, stopwatch.ElapsedMilliseconds, ((double)myBench(i)) / stopwatch.ElapsedMilliseconds);
+                Console.WriteLine("{0}: {1}: {2}", i, 
+                    stopwatch.ElapsedMilliseconds, 
+                    ((double)myBench(i)) / stopwatch.ElapsedMilliseconds);
                 stopwatch.Reset();
             }
 
         }
         static void Main(string[] args) {
-            //testAlgorithm(mnozenieWektorow, benchmarkLin, 1000*1000, 100*1000*1000, 1000*1000);
-            testAlgorithm(mnozenieKwadrat, benchmarkKw, 100, 100 * 100, 100);
+            testAlgorithm(mnozenieWektorow, benchmarkLin, 1000*1000, 100*1000*1000, 1000*1000);
+            //testAlgorithm(mnozenieKwadrat, benchmarkKw, 1000, 100 * 1000, 300);
         }
     }
 }
