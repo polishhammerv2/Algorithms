@@ -8,6 +8,38 @@ using System.Threading.Tasks;
 namespace _01Pomiary {
 
     class Program {
+        static long mnozenieMacierzy(int n) {
+            Stopwatch stopwatch = new Stopwatch();
+            long czas;
+            double[,] m1 = new double[n, n];
+            double[,] m2 = new double[n, n];
+            Random randNum = new Random();
+            for (int i = 0; i < n; i++)
+                for (int j = 0; j < n; j++) {
+                    m1[i, j] = randNum.NextDouble();
+                    m2[i, j] = randNum.NextDouble();
+                }
+            double[,] wynik = new double[n, n];
+            for (int i = 0; i < n; i++)
+                for (int j = 0; j < n; j++) {
+                    wynik[i, j] = 0;
+                }
+
+            stopwatch.Start();
+            for (int i = 0; i < n; i++)
+                for (int j = 0; j < n; j++)
+                    for (int k = 0; k < n; k++) {
+                        wynik[i, j] += m1[i, k] * m2[j, k];
+                    }
+            stopwatch.Stop();
+            czas = stopwatch.ElapsedMilliseconds;
+            stopwatch.Reset();
+            return czas;
+        }
+        static double benchmarkSzesc(long n) {
+            return (n + 7) / 5650.0;
+        }
+
         static double mnozenieWektorow(int n) {
             double[] w1, w2;
             double result = 0;
@@ -43,27 +75,24 @@ namespace _01Pomiary {
             return result;
         }
         static double benchmarkKw(long n) {
-            return (n * n / (100.0) + n ) / 650;
+            return (n * n / (100.0) + n) / 650;
         }
 
-        static void testAlgorithm(Func<int, double> myFunc, Func<long, double> myBench,
+        static void testAlgorithm(Func<int, long> myFunc, Func<long, double> myBench,
             int n_start, int n_stop, int step) {
-            Stopwatch stopwatch = new Stopwatch();
+            long czas;
 
             for (int i = n_start; i <= n_stop; i += step) {
-                stopwatch.Start();
-                myFunc(i);
-                stopwatch.Stop();
-                Console.WriteLine("{0}: {1}: {2}", i, 
-                    stopwatch.ElapsedMilliseconds, 
-                    ((double)myBench(i)) / stopwatch.ElapsedMilliseconds);
-                stopwatch.Reset();
+                czas = myFunc(i);
+                Console.WriteLine("{0}: {1}: {2}", i, czas,
+                ((double)myBench(i)) / czas);
             }
 
         }
         static void Main(string[] args) {
-            testAlgorithm(mnozenieWektorow, benchmarkLin, 1000*1000, 100*1000*1000, 1000*1000);
+            //testAlgorithm(mnozenieWektorow, benchmarkLin, 1000 * 1000, 100 * 1000 * 1000, 1000 * 1000);
             //testAlgorithm(mnozenieKwadrat, benchmarkKw, 1000, 100 * 1000, 300);
+            testAlgorithm(mnozenieMacierzy, benchmarkSzesc, 100, 10 * 1000, 20);
         }
     }
 }
