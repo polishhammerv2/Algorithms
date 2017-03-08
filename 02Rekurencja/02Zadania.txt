@@ -19,10 +19,6 @@ Zadanie 3
 -----------
 Napisz program, który zapisze podan¹ liczbê dziesiêtn¹ naturaln¹ w systemie binarnym. Rozwi¹¿ zadany problem rekurencyjnie.
 
-Zadanie 3
------------
-Napisz program, który zapisze podan¹ liczbê dziesiêtn¹ naturaln¹ w systemie binarnym. Rozwi¹¿ zadany problem rekurencyjnie.
-
 Zadanie 4
 -----------
 Napisz program, który wyznaczy sumê cyfr liczby naturalnej z zakresu [0...1020]. Rozwi¹¿ zadanie metod¹ rekurencyjn¹.
@@ -38,4 +34,3 @@ Napisz procedurê znajduj¹ca wszystkie takie rozstawienia 8 hetmanów na szachowni
 Zadanie 7
 -----------
 Napisz procedurê rozwi¹zuj¹c¹ problem wie¿ Hanoi dla zadanej liczby kr¹¿ków.
-
