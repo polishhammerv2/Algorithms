@@ -20,7 +20,8 @@ namespace ConsoleApplication1
             if (n > 1) {
                 return konwerter(n / 2, ref wynik);
             }
-
+			
+			wynik = "0";
             return 1;           
         }
 
