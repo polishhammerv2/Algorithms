@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01Hanoi", "01Hanoi.csproj",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02Euklides", "..\02Euklides\02Euklides.csproj", "{C6F53752-CA31-4536-8D52-6EF72932D335}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03Fibonacci", "..\03Fibonacci\03Fibonacci.csproj", "{DC52596B-7D7C-4529-A6DE-F4BFFF45E1CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C6F53752-CA31-4536-8D52-6EF72932D335}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6F53752-CA31-4536-8D52-6EF72932D335}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6F53752-CA31-4536-8D52-6EF72932D335}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC52596B-7D7C-4529-A6DE-F4BFFF45E1CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC52596B-7D7C-4529-A6DE-F4BFFF45E1CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC52596B-7D7C-4529-A6DE-F4BFFF45E1CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC52596B-7D7C-4529-A6DE-F4BFFF45E1CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
