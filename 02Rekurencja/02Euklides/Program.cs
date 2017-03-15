@@ -14,7 +14,7 @@ namespace _02Euklides {
         }
         static void Main(string[] args) {
             Console.WriteLine(Euklides(12, 9));
-            Console.WriteLine(Euklides(1024, 256*3));
+            Console.WriteLine(Euklides(4 * 256, 3 * 256));
         }
     }
 }
