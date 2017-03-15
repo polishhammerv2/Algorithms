@@ -25,12 +25,17 @@ Napisz program, który wyznaczy sumê cyfr liczby naturalnej z zakresu [0...1020].
 
 Zadanie 5
 -----------
-Czy istnieje œcie¿ka miedzy wskazanymi punktami (i1,j1) i (i2,j2) w labiryncie reprezentowanym przez prostok¹tn¹ tablicê liczb ca³kowitych o rozmiarze M×N, zawieraj¹c¹ zera (œciana) i jedynki (droga)? Zak³adamy, ¿e nie mo¿na przechodziæ z pola na pole po skosie (np. z (2,5) na (3,6)), a tylko w czterech podstawowych kierunkach (np. z (2,5) na (3,5), (2,4) itd.)
+Czy istnieje œcie¿ka miedzy wskazanymi punktami (i1,j1) i (i2,j2) w labiryncie reprezentowanym 
+przez prostok¹tn¹ tablicê liczb ca³kowitych o rozmiarze M×N, zawieraj¹c¹ zera (œciana) i jedynki (droga)? 
+Zak³adamy, ¿e nie mo¿na przechodziæ z pola na pole po skosie (np. z (2,5) na (3,6)), 
+a tylko w czterech podstawowych kierunkach (np. z (2,5) na (3,5), (2,4) itd.)
 
 Zadanie 6
 -----------
-Napisz procedurê znajduj¹ca wszystkie takie rozstawienia 8 hetmanów na szachownicy, by ¿adne dwa hetmany siê nie atakowa³y.
+Napisz procedurê znajduj¹ca wszystkie takie rozstawienia 8 hetmanów na szachownicy, 
+by ¿adne dwa hetmany siê nie atakowa³y.
 
 Zadanie 7
 -----------
 Napisz procedurê rozwi¹zuj¹c¹ problem wie¿ Hanoi dla zadanej liczby kr¹¿ków.
+
