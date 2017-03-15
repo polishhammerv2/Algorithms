@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1 {
+    class Program {
+
+        static int N = 4;
+        static bool[] row = new bool[N];
+        static bool[] up = new bool[2*N-1];
+        static bool[] down = new bool[2*N-1];
+        static int[] solution = new int[N+1];
+
+        // Funkcja possible sprawdzaj¹ca, czy na polu (r,c) mo¿na postawiæ hetmana, ma postaæ:
+        static bool possible(int r, int c) {
+            return !row[r] && !up[r + c - 1] && !down[r - c + N];
+        }
+
+        // Numery wierszy, w których stoj¹ hetmany w poszczególnych kolumnach przechowamy w tablicy solution o rozmiarze N. Funkcja put ustawia hetmana na polu (r,c):
+        static void put(int r, int c) {
+            solution[c] = r;
+            row[r] = up[r + c - 1] = down[r - c + N] = true;
+        }
+
+
+        static void remove(int r, int c) {
+            row[r] = up[r + c - 1] = down[r - c + N] = false;
+        }
+
+
+        static void test(int c) {
+
+            
+            for(int r=0; r < N; r++) {
+                if( possible(r,c)) {
+                    put(r,c);
+                    if (c==N){
+                        for(int i = 0; i < N; i++) {
+                            Console.WriteLine("{0} {1}", i, solution[i]);
+                        
+                        }
+                    }
+
+                    else{
+                        test(c + 1);
+                        remove(r,c);
+                    }
+                }
+            }
+
+        }
+
+        static void Main() {
+            test(1);
+            Console.ReadKey();
+
+        }
+
+    }
+}
+
