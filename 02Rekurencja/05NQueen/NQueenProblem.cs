@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace _05NQueen {
-    class NQueenProblem {
+    class NQueenProblem { 
         int N = 4;
 
         NQueenProblem(int n) {
