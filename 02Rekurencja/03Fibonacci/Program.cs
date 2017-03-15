@@ -42,15 +42,17 @@ namespace _03Fibonacci {
         }
 
         static void Main(string[] args) {
-            int N_start = 1000, N_stop = 1010;
+            int N_start = 5000, N_stop = 5015;
             BigInteger res;
             Stopwatch sw = new Stopwatch();
+
             for(int i = N_start; i < N_stop; i++) {
                 //sw.Reset();
                 //sw.Start();
-                //Console.Write("rek({0:G3}) = {1:G7} ", i, fib_rek(i));
+                //res = fib_rek(i);
                 //sw.Stop();
-                //Console.Write("{0:F5} ", sw.Elapsed.TotalMilliseconds);
+                //Console.Write("rek({0:G3}) = {1:G7} ", i, res);
+                //Console.WriteLine("{0:F5} ", sw.Elapsed.TotalMilliseconds);
                 sw.Reset();
                 sw.Start();
                 res = fib_iter(i);
