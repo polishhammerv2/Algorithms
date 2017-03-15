@@ -19,16 +19,20 @@ namespace _01Hanoi {
                 towerB = new Stack<String>(),
                 towerPom = new Stack<String>();
             String s = "";
-            const int N = 10;
+            const int N = 20;
             for(int i = 0; i < N; i++) {
                 s += "o";
                 towerA.Push(s);
             }
+            Console.WriteLine("A (przed): {0}", towerA.Count);
+            Console.WriteLine("B (przed): {0}", towerB.Count);
             foreach(var x in towerA)
                 Console.WriteLine(x);
 
             MoveDisc(N, towerA, towerB, towerPom);
 
+            Console.WriteLine("A (po): {0}", towerA.Count);
+            Console.WriteLine("B (po): {0}", towerB.Count);
             foreach(var x in towerB)
                 Console.WriteLine(x);
         }
