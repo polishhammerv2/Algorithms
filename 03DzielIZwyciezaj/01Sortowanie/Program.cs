@@ -19,7 +19,7 @@ namespace _01Sortowanie {
                         Swap(tab, j - 1, j);
         }
         static void sortowanieWstawianie(int[] tab) {
-            int x, j;
+            int x, j; 
             for(int i = 1; i < tab.Length-1; i++) {
                 //a[0..i-1] jest już posortowana
                 x = tab[i]; //odkładamy element z pozycji i
