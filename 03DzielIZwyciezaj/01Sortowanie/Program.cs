@@ -33,7 +33,7 @@ namespace _01Sortowanie {
         }
 
         static void Main(string[] args) {
-            const int N = 10;
+            const int N = 10000;
             int[] tablica = new int[N];
             Random rand = new Random();
             Stopwatch sw = new Stopwatch();
