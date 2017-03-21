@@ -12,15 +12,22 @@ namespace _01Sortowanie {
             tab[i] = tab[j];
             tab[j] = pom;
         }
+        //
+        // Sortowanie bąbelkowe
+        //
         static void sortowanieBabelkowe(int[] tab) {
             for(int i = 1; i < tab.Length; i++)
                 for(int j = tab.Length - 1; j > 0; j--)
                     if(tab[j - 1] > tab[j])
                         Swap(tab, j - 1, j);
         }
+
+        //
+        // Sortowanie przez wstawianie
+        //
         static void sortowanieWstawianie(int[] tab) {
-            int x, j; 
-            for(int i = 1; i < tab.Length-1; i++) {
+            int x, j;
+            for(int i = 1; i < tab.Length - 1; i++) {
                 //a[0..i-1] jest już posortowana
                 x = tab[i]; //odkładamy element z pozycji i
                 j = i;
@@ -29,6 +36,60 @@ namespace _01Sortowanie {
                     j = j - 1;
                 }
                 tab[j] = x;
+            }
+        }
+
+        //
+        // Merge Sort
+        //
+        public static void MergeSort(int[] input, int low, int high) {
+            if(low < high) {
+                int middle = (low / 2) + (high / 2);
+                MergeSort(input, low, middle);
+                MergeSort(input, middle + 1, high);
+                Merge(input, low, middle, high);
+            }
+        }
+
+        public static void MergeSort(int[] input) {
+            MergeSort(input, 0, input.Length - 1);
+        }
+
+        private static void Merge(int[] input, int low, int middle, int high) {
+            int left = low;
+            int right = middle + 1;
+            int[] tmp = new int[(high - low) + 1];
+            int tmpIndex = 0;
+
+            while((left <= middle) && (right <= high)) {
+                if(input[left] < input[right]) {
+                    tmp[tmpIndex] = input[left];
+                    left = left + 1;
+                } else {
+                    tmp[tmpIndex] = input[right];
+                    right = right + 1;
+                }
+                tmpIndex = tmpIndex + 1;
+            }
+
+            if(left <= middle) {
+                while(left <= middle) {
+                    tmp[tmpIndex] = input[left];
+                    left = left + 1;
+                    tmpIndex = tmpIndex + 1;
+                }
+            }
+
+            if(right <= high) {
+                while(right <= high) {
+                    tmp[tmpIndex] = input[right];
+                    right = right + 1;
+                    tmpIndex = tmpIndex + 1;
+                }
+            }
+
+            for(int i = 0; i < tmp.Length; i++) {
+                input[low + i] = tmp[i];
             }
         }
 
