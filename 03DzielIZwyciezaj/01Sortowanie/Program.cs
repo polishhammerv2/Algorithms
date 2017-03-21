@@ -131,7 +131,7 @@ namespace _01Sortowanie {
             Random rand = new Random();
             Stopwatch sw = new Stopwatch();
 
-            for(int i = 0; i < N; i++) tablica[i] = rand.Next(1, 100);
+            for(int i = 0; i < N; i++) tablica[i] = rand.Next(1, 100000);
 
             //int[] tabBabelki = new int[N];
             //for(int i = 0; i < N; i++) tabBabelki[i] = tablica[i];
