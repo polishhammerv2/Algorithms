@@ -5,7 +5,7 @@ Materiały dodatkowe.
 ## Sortowanie
 * [Bąbelkowe](https://www.youtube.com/watch?v=P00xJgWzz2c)
 * [Przez wstawianie](https://www.youtube.com/watch?v=c4BRHC7kTaQ)
-* [Przez zcalanie](https://www.youtube.com/watch?v=GCae1WNvnZM)
+* [Przez scalanie](https://www.youtube.com/watch?v=GCae1WNvnZM)
 * [Quick Sort](https://www.youtube.com/watch?v=y_G9BkAm6B8)
 * [Heap Sort](https://www.youtube.com/watch?v=6NB0GHY11Iw)
 * [Bucket Sort](https://www.youtube.com/watch?v=NvZG0dZ60RQ)
