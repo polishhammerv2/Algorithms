@@ -79,7 +79,6 @@ namespace _01Sortowanie {
                     tmpIndex = tmpIndex + 1;
                 }
             }
-
             if(right <= high) {
                 while(right <= high) {
                     tmp[tmpIndex] = input[right];
@@ -87,37 +86,92 @@ namespace _01Sortowanie {
                     tmpIndex = tmpIndex + 1;
                 }
             }
-
             for(int i = 0; i < tmp.Length; i++) {
                 input[low + i] = tmp[i];
             }
         }
 
+        //
+        // QuictSort
+        //
+        public static void QuickSort(int[] input, int left, int right) {
+            if(left < right) {
+                int q = Partition(input, left, right);
+                QuickSort(input, left, q - 1);
+                QuickSort(input, q + 1, right);
+            }
+        }
+
+        private static int Partition(int[] input, int left, int right) {
+            int pivot = input[right];
+            int temp;
+
+            int i = left;
+            for(int j = left; j < right; j++) {
+                if(input[j] <= pivot) {
+                    temp = input[j];
+                    input[j] = input[i];
+                    input[i] = temp;
+                    i++;
+                }
+            }
+
+            input[right] = input[i];
+            input[i] = pivot;
+
+            return i;
+        }
+
+        //
+        // 
+        //
         static void Main(string[] args) {
-            const int N = 10000;
+            const int N = 100000;
             int[] tablica = new int[N];
             Random rand = new Random();
             Stopwatch sw = new Stopwatch();
 
             for(int i = 0; i < N; i++) tablica[i] = rand.Next(1, 100);
 
-            int[] tabBabelki = new int[N];
-            for(int i = 0; i < N; i++) tabBabelki[i] = tablica[i];
-            Console.WriteLine("Tablica:{0}", string.Join(",", tabBabelki));
-            sw.Reset();
-            sw.Start();
-            sortowanieBabelkowe(tabBabelki);
-            sw.Stop();
-            Console.WriteLine("Tablica:{0}, czas: {1}", string.Join(",", tabBabelki), sw.Elapsed.TotalMilliseconds);
+            //int[] tabBabelki = new int[N];
+            //for(int i = 0; i < N; i++) tabBabelki[i] = tablica[i];
+            ////Console.WriteLine("Tablica:{0}", string.Join(",", tabBabelki));
+            //Console.Write("Bubble: ");
+            //sw.Reset();
+            //sw.Start();
+            //sortowanieBabelkowe(tabBabelki);
+            //sw.Stop();
+            //Console.WriteLine("Czas: {1}", string.Join(",", tabBabelki), sw.Elapsed.TotalMilliseconds);
 
-            int[] tabWstaw = new int[N];
-            for(int i = 0; i < N; i++) tabWstaw[i] = tablica[i];
-            Console.WriteLine("Tablica:{0}", string.Join(",", tabWstaw));
+            //int[] tabWstaw = new int[N];
+            //for(int i = 0; i < N; i++) tabWstaw[i] = tablica[i];
+            ////Console.WriteLine("Tablica:{0}", string.Join(",", tabWstaw));
+            //Console.Write("Insert: ");
+            //sw.Reset();
+            //sw.Start();
+            //sortowanieWstawianie(tabWstaw);
+            //sw.Stop();
+            //Console.WriteLine("Czas: {1}", string.Join(",", tabWstaw), sw.Elapsed.TotalMilliseconds);
+
+            int[] tabMerge = new int[N];
+            for(int i = 0; i < N; i++) tabMerge[i] = tablica[i];
+            //Console.WriteLine("Tablica:{0}", string.Join(",", tabMerge));
+            Console.Write("Merge: ");
             sw.Reset();
             sw.Start();
-            sortowanieWstawianie(tabWstaw);
+            MergeSort(tabMerge);
             sw.Stop();
-            Console.WriteLine("Tablica:{0}, czas: {1}", string.Join(",", tabWstaw), sw.Elapsed.TotalMilliseconds);
+            Console.WriteLine("Czas: {1}", string.Join(",", tabMerge), sw.Elapsed.TotalMilliseconds);
+
+            int[] tabQuick = new int[N];
+            for(int i = 0; i < N; i++) tabQuick[i] = tablica[i];
+            //Console.WriteLine("Tablica:{0}", string.Join(",", tabMerge));
+            Console.Write("Quick: ");
+            sw.Reset();
+            sw.Start();
+            QuickSort(tabQuick, 0, tabQuick.Length-1);
+            sw.Stop();
+            Console.WriteLine("Czas: {1}", string.Join(",", tabQuick), sw.Elapsed.TotalMilliseconds);
         }
     }
 }
