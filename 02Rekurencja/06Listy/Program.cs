@@ -29,6 +29,13 @@ namespace _06Listy {
             tail = head;
             head = node;
         }
+        public void usunGlowe() {
+            if(head != null) {
+                head = tail;
+                if(tail != null)
+                    tail = tail.nextNode;
+            }
+        }
         public override string ToString() {
             if(head == null) return "NULL";
             return head.ToString();   
@@ -38,12 +45,22 @@ namespace _06Listy {
         static void Main(string[] args) {
             Lista lista = new Lista();
 
+            Console.WriteLine(lista);
+
             lista.dodajNaPoczatek(new Node(1));
             lista.dodajNaPoczatek(new Node(2));
             lista.dodajNaPoczatek(new Node(3));
             lista.dodajNaPoczatek(new Node(4));
 
             Console.WriteLine(lista);
+
+            lista.usunGlowe();
+            Console.WriteLine(lista);
+            lista.usunGlowe();
+            Console.WriteLine(lista);
+            lista.usunGlowe();
+            Console.WriteLine(lista);
+
         }
     }
 }
