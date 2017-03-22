@@ -60,7 +60,8 @@ namespace _06Listy {
             Console.WriteLine(lista);
             lista.usunGlowe();
             Console.WriteLine(lista);
-
+            lista.usunGlowe();
+            Console.WriteLine(lista);
         }
     }
 }
