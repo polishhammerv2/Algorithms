@@ -1,21 +1,21 @@
 Zadanie 1
 -----------
-Dla listy jednokierunkowej przechowuj¹cej elementy okreœlonego typu np. liczby ca³kowite napisz funkcje wykonuj¹ce nastêpuj¹ce operacje:
-– dodawanie elementu na pocz¹tek listy,
-– wyœwietlanie listy,
-– usuwanie elementu z przodu listy,
-- liczenie d³ugoœci listy,
-- dodawanie elementu do listy z zachowaniem porz¹dku
+Dla listy jednokierunkowej przechowujÄ…cej elementy okreÅ›lonego typu np. liczby caÅ‚kowite napisz funkcje wykonujÄ…ce nastÄ™pujÄ…ce operacje:
+â€“ dodawanie elementu na poczÄ…tek listy,
+â€“ wyÅ›wietlanie listy,
+â€“ usuwanie elementu z przodu listy,
+- liczenie dÅ‚ugoÅ›ci listy,
+- dodawanie elementu do listy z zachowaniem porzÄ…dku
 - wyszukiwanie elementu listy
 
 Zadanie 2
 -----------
-Zadanie jak powy¿ej ale dla listy dwukierunkowej.
+Zadanie jak powyÅ¼ej ale dla listy dwukierunkowej.
 
 Zadanie 3
 -----------
-Zaimplementuj dzia³anie stosu liczb ca³kowitych:
-- funkcja push(e) wk³ada element na wierzcho³ek stosu
-- funkcja pop() zdejmuje element z wierzcho³ka stsu i oddaje jako wynik
-- funkcja len() oddaje liczbê elementów na stosie
+Zaimplementuj dziaÅ‚anie stosu liczb caÅ‚kowitych:
+- funkcja push(e) wkÅ‚ada element na wierzchoÅ‚ek stosu
+- funkcja pop() zdejmuje element z wierzchoÅ‚ka stosu i oddaje jako wynik
+- funkcja len() oddaje liczbÄ™ elementÃ³w na stosie
 
