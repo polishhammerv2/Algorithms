@@ -13,6 +13,11 @@ namespace _06Listy {
             this.value = v;
             this.nextNode = null;
         }
+
+        public int Dlugosc {
+            get { return (nextNode == null ? 1 : 1 + nextNode.Dlugosc); }
+        }
+
         public override string ToString() {
             if(nextNode == null)
                 return value + "";
@@ -23,7 +28,7 @@ namespace _06Listy {
     public class Lista {
         public Node head = null;
         public Node tail = null;
-        
+
         public void dodajNaPoczatek(Node node) {
             node.nextNode = head;
             tail = head;
@@ -36,32 +41,35 @@ namespace _06Listy {
                     tail = tail.nextNode;
             }
         }
+        public int Dlugosc {
+            get { return (head == null ? 0 : head.Dlugosc); }
+        }
         public override string ToString() {
             if(head == null) return "NULL";
-            return head.ToString();   
+            return head.ToString();
         }
     }
     class Program {
         static void Main(string[] args) {
             Lista lista = new Lista();
 
-            Console.WriteLine(lista);
+            Console.WriteLine("#: {1}: {0}", lista, lista.Dlugosc);
 
             lista.dodajNaPoczatek(new Node(1));
             lista.dodajNaPoczatek(new Node(2));
             lista.dodajNaPoczatek(new Node(3));
             lista.dodajNaPoczatek(new Node(4));
 
-            Console.WriteLine(lista);
+            Console.WriteLine("#: {1}: {0}", lista, lista.Dlugosc);
 
             lista.usunGlowe();
-            Console.WriteLine(lista);
+            Console.WriteLine("#: {1}: {0}",lista, lista.Dlugosc);
             lista.usunGlowe();
-            Console.WriteLine(lista);
+            Console.WriteLine("#: {1}: {0}", lista, lista.Dlugosc);
             lista.usunGlowe();
-            Console.WriteLine(lista);
+            Console.WriteLine("#: {1}: {0}", lista, lista.Dlugosc);
             lista.usunGlowe();
-            Console.WriteLine(lista);
+            Console.WriteLine("#: {1}: {0}", lista, lista.Dlugosc);
         }
     }
 }
