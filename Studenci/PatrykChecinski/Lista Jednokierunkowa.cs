@@ -51,6 +51,45 @@ namespace List {
             
         }
 
+        static int D³ugoœæListy(Lista l) {
+			if(l.next != null) {
+                return 1 + D³ugoœæListy(l.next);
+			}
+
+            return 1;
+		}
+
+        static void DodajNaKoñcu(Lista l, int wartosc) {
+
+            if (l.next != null) {
+                DodajNaKoñcu(l.next, wartosc);
+            } 
+            else {
+                l.next = new Lista();
+                l.next.wartosc = wartosc;
+            }
+
+        }
+
+
+        static bool SzukajElementu(Lista l, int szukana) {
+
+            if (l.wartosc == szukana) {
+                return true;
+            }
+            else {
+                if (l.next != null) {
+                    return SzukajElementu(l.next, szukana);
+                }
+            }
+
+            return false;
+
+        }
+
+
+
+
 
         static void Main(string[] args) {
 
@@ -70,6 +109,15 @@ namespace List {
             UsuñPrzód(ref lista);
             WyœwietlListe(lista);
 
+            Console.WriteLine("--------------");
+            Console.WriteLine("D³ugoœæ listy: {0}", D³ugoœæListy(lista));
+
+            Console.WriteLine("--------------");
+            DodajNaKoñcu(lista, 230);
+            WyœwietlListe(lista);
+
+            Console.WriteLine("--------------");
+            Console.WriteLine("Szukaj 3: {0}", SzukajElementu(lista, 3));
 
 
             Console.ReadKey();
