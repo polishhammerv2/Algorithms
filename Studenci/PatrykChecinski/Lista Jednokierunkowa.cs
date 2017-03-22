@@ -38,7 +38,7 @@ namespace List {
 
         static void WyœwietlListe(Lista l) {
 
-            Console.WriteLine(l.wartosc);
+            Console.Write("{0} ", l.wartosc);
 
             if (l.next != null) {
                 WyœwietlListe(l.next);
@@ -87,38 +87,35 @@ namespace List {
 
         }
 
-
-
-
-
         static void Main(string[] args) {
 
             Lista lista = new Lista();
             lista.wartosc = 1;
+
             lista.next = new Lista();
             lista.next.wartosc = 3;
 
-            Console.WriteLine("--------------");
+            Console.WriteLine("- WyœwietlListe -------------\n");
             WyœwietlListe(lista);
 
-            Console.WriteLine("--------------");
+            Console.WriteLine("\n- DodajElement -------------\n");
             DodajElement(ref lista, 40);
             WyœwietlListe(lista);
 
-            Console.WriteLine("--------------");
+            Console.WriteLine("\n- UsuñPrzód -------------\n");
             UsuñPrzód(ref lista);
             WyœwietlListe(lista);
 
-            Console.WriteLine("--------------");
+            Console.WriteLine("\n- D³ugoœæListy -------------\n");
             Console.WriteLine("D³ugoœæ listy: {0}", D³ugoœæListy(lista));
 
-            Console.WriteLine("--------------");
+            Console.WriteLine("\n- DodajNaKoñcu -------------\n");
             DodajNaKoñcu(lista, 230);
             WyœwietlListe(lista);
 
-            Console.WriteLine("--------------");
+            Console.WriteLine("\n- SzukajElementu -------------\n");
             Console.WriteLine("Szukaj 3: {0}", SzukajElementu(lista, 3));
-
+            Console.WriteLine("Szukaj 53: {0}", SzukajElementu(lista, 53));
 
             Console.ReadKey();
 
