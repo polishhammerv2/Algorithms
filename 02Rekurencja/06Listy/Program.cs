@@ -13,16 +13,37 @@ namespace _06Listy {
             this.value = v;
             this.nextNode = null;
         }
+        public override string ToString() {
+            if(nextNode == null)
+                return value + "";
+            return value + ", " + nextNode.ToString();
+        }
     }
 
     public class Lista {
-        public Node head;
-        public Node tail;
+        public Node head = null;
+        public Node tail = null;
         
-         
+        public void dodajNaPoczatek(Node node) {
+            node.nextNode = head;
+            tail = head;
+            head = node;
+        }
+        public override string ToString() {
+            if(head == null) return "NULL";
+            return head.ToString();   
+        }
     }
     class Program {
         static void Main(string[] args) {
+            Lista lista = new Lista();
+
+            lista.dodajNaPoczatek(new Node(1));
+            lista.dodajNaPoczatek(new Node(2));
+            lista.dodajNaPoczatek(new Node(3));
+            lista.dodajNaPoczatek(new Node(4));
+
+            Console.WriteLine(lista);
         }
     }
 }
