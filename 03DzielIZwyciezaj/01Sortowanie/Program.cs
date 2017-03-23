@@ -126,7 +126,7 @@ namespace _01Sortowanie {
         // 
         //
         static void Main(string[] args) {
-            const int N = 100000;
+            const int N = 1000 * 1000;
             int[] tablica = new int[N];
             Random rand = new Random();
             Stopwatch sw = new Stopwatch();
@@ -169,7 +169,7 @@ namespace _01Sortowanie {
             Console.Write("Quick: ");
             sw.Reset();
             sw.Start();
-            QuickSort(tabQuick, 0, tabQuick.Length-1);
+            QuickSort(tabQuick, 0, tabQuick.Length - 1);
             sw.Stop();
             Console.WriteLine("Czas: {1}", string.Join(",", tabQuick), sw.Elapsed.TotalMilliseconds);
         }
