@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01Sortowanie", "01Sortowanie.csproj", "{33E85818-2626-4C18-A7D7-7B3CC5C6F309}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeapSort", "..\02HeapSort\HeapSort.csproj", "{4018F369-1127-40A8-AD47-A6B30F2AE1CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02HeapSort", "..\02HeapSort\02HeapSort.csproj", "{4018F369-1127-40A8-AD47-A6B30F2AE1CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

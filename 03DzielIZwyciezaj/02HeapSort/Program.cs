@@ -109,4 +109,5 @@ namespace HeapSort {
 }
 //
 // Source: https://simpledevcode.wordpress.com/2014/11/25/heapsort-c-tutorial/
+// see also: https://en.wikipedia.org/wiki/Heapsort
 //
