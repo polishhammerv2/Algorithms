@@ -15,4 +15,5 @@ Materiały dodatkowe.
 * [Operacje BST: usuwanie](https://www.youtube.com/watch?v=gcULXE7ViZw&t)
 * [Operacje BST: wstawianie](https://www.youtube.com/watch?v=BVeEmH26PQ4)
 * [Przechodzenie drzew](https://www.youtube.com/watch?v=gm8DUJJhmY4)
+* [The Heap Data Structure](https://simpledevcode.wordpress.com/2015/08/05/the-heap-data-structure-c-java-c/)
 * [AVL: self-balancing binary search tree](https://simpledevcode.wordpress.com/2014/09/16/avl-tree-in-c/)

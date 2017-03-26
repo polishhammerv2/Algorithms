@@ -1,0 +1,20 @@
+Zadanie 1
+-----------
+Napisz program zliczający liczbę przestawień elementów w algorytmie sortowania tablicy o n elementach, 
+dla algorytmów sortowania przedstawionych na wykładzie. Dla jakich n zaczyjaną się różnice w ilości przestawień?
+
+Zadanie 2
+-----------
+Dla przedstawionych algorytmów sortowania zastosuj technikę adresowania pośredniego.
+Porównaj czas działania tak zmodyfikowanych algorytmów w stosunku do ich oryginalnych wersji.
+Wykonaj badanie dla tablic:
+- liczb całkowitych
+- struktur zawierających 10 długich napisów
+
+Zadanie 3
+-----------
+Zmodyfikuj poznane algorytmy sortowania tak by można było przy ich pomocy posortować listę jednokierunkową.
+
+Zadanie 4
+-----------
+Zaimplementuj wybrane algorytmy sortowania tablic, tak by porządek sortowania mógł by zadawany poza algorytmem sortowania.
