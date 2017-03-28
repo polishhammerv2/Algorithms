@@ -1,6 +1,8 @@
 # Dziel i zwyciężaj
 
 Materiały dodatkowe. 
+## Wizualizacje algorytmów
+* [Data Structure Visualizations](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
 
 ## Sortowanie
 * [Bąbelkowe](https://www.youtube.com/watch?v=P00xJgWzz2c)
