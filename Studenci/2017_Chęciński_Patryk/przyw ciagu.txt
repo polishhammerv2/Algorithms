@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Diagnostics;
+
+namespace Labolatorium_01 {
+    class Program {
+
+        /*
+         * Algorytm 1. Przywódca ci¹gu: https://goo.gl/ZLb4Vq
+         */
+
+
+        static int PrzywodcaCiagu(int [] A) {
+
+            int ile = 0, j = 0, n = A.Length;
+
+            for (int i = 0; i < n; i++) {
+                if (ile == 0) {
+                    ile++;
+                    j = i;
+                }
+                else if (A[i] == A[j]) {
+                    ile++;
+                }
+                else {
+                    ile--;
+                }
+            }
+            return A[j];
+
+        }
+
+
+        static void Main(string[] args) {
+            int N = 100000;
+            int[] A = new int[N];
+
+            Random rand = new Random();
+
+            for (int i = 0; i < N; i++) {
+                A[i] = rand.Next(10);
+            }
+
+            int wynik;
+
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
+            wynik = PrzywodcaCiagu(A); 
+
+            stopwatch.Stop();
+
+            Console.WriteLine("Wynik: {0}, czas {1}ms", wynik, stopwatch.ElapsedMilliseconds);
+
+            Console.ReadKey();
+
+        }
+    }
+}
