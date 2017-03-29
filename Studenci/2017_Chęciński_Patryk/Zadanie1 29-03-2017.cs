@@ -124,7 +124,7 @@ namespace _01Sortowanie {
                     input[j] = input[i];
                     input[i] = temp;
                     i++;
-					QuickSortCount++;
+                    QuickSortCount++;
                 }
             }
 
