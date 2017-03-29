@@ -107,7 +107,6 @@ namespace _01Sortowanie {
         //
         public static void QuickSort(int[] input, int left, int right) {
             if (left < right) {
-                QuickSortCount++;
                 int q = Partition(input, left, right);
                 QuickSort(input, left, q - 1);
                 QuickSort(input, q + 1, right);
@@ -125,6 +124,7 @@ namespace _01Sortowanie {
                     input[j] = input[i];
                     input[i] = temp;
                     i++;
+					QuickSortCount++;
                 }
             }
 
@@ -165,6 +165,7 @@ namespace _01Sortowanie {
 
         static void Main(string[] args) {
 
+		
             test(100);
             Console.WriteLine("Testy dla N: {4}\nIloœci swapów w algorytmach:\nb¹belki: {0}\nwstawianie: {1}\nmerge: {2}\nquick: {3}", BubbleSortCount, InsertionSortCount, MergeSortCount, QuickSortCount, 100);
             BubbleSortCount = 0;
