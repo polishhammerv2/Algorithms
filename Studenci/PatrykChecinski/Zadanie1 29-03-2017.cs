@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -19,7 +19,7 @@ namespace _01Sortowanie {
             tab[j] = pom;
         }
         //
-        // Sortowanie b¹belkowe
+        // Sortowanie bÄ…belkowe
         //
         static void sortowanieBabelkowe(int[] tab) {
             for (int i = 1; i < tab.Length; i++)
@@ -36,11 +36,11 @@ namespace _01Sortowanie {
         static void sortowanieWstawianie(int[] tab) {
             int x, j;
             for (int i = 1; i < tab.Length - 1; i++) {
-                //a[0..i-1] jest ju¿ posortowana
-                x = tab[i]; //odk³adamy element z pozycji i
+                //a[0..i-1] jest juÅ¼ posortowana
+                x = tab[i]; //odkÅ‚adamy element z pozycji i
                 j = i;
                 while (j > 0 && x < tab[j - 1]) {
-                    tab[j] = tab[j - 1]; //przesuwamy element wiêkszy od x o jedn¹ pozycjê w prawo    
+                    tab[j] = tab[j - 1]; //przesuwamy element wiÄ™kszy od x o jednÄ… pozycjÄ™ w prawo    
                     InsertionSortCount++;
                     j = j - 1;
                 }
@@ -167,7 +167,7 @@ namespace _01Sortowanie {
 
 		
             test(100);
-            Console.WriteLine("Testy dla N: {4}\nIloœci swapów w algorytmach:\nb¹belki: {0}\nwstawianie: {1}\nmerge: {2}\nquick: {3}", BubbleSortCount, InsertionSortCount, MergeSortCount, QuickSortCount, 100);
+            Console.WriteLine("Testy dla N: {4}\nIloÅ›ci swapÃ³w w algorytmach:\nbÄ…belki: {0}\nwstawianie: {1}\nmerge: {2}\nquick: {3}", BubbleSortCount, InsertionSortCount, MergeSortCount, QuickSortCount, 100);
             BubbleSortCount = 0;
             InsertionSortCount = 0;
             MergeSortCount = 0;
@@ -175,7 +175,7 @@ namespace _01Sortowanie {
 
 
             test(1000);
-            Console.WriteLine("Testy dla N: {4}\nIloœci swapów w algorytmach:\nb¹belki: {0}\nwstawianie: {1}\nmerge: {2}\nquick: {3}", BubbleSortCount, InsertionSortCount, MergeSortCount, QuickSortCount, 1000);
+            Console.WriteLine("Testy dla N: {4}\nIloÅ›ci swapÃ³w w algorytmach:\nbÄ…belki: {0}\nwstawianie: {1}\nmerge: {2}\nquick: {3}", BubbleSortCount, InsertionSortCount, MergeSortCount, QuickSortCount, 1000);
             BubbleSortCount = 0;
             InsertionSortCount = 0;
             MergeSortCount = 0;
@@ -183,7 +183,7 @@ namespace _01Sortowanie {
 
 
             test(10000);
-            Console.WriteLine("Testy dla N: {4}\nIloœci swapów w algorytmach:\nb¹belki: {0}\nwstawianie: {1}\nmerge: {2}\nquick: {3}", BubbleSortCount, InsertionSortCount, MergeSortCount, QuickSortCount, 10000);
+            Console.WriteLine("Testy dla N: {4}\nIloÅ›ci swapÃ³w w algorytmach:\nbÄ…belki: {0}\nwstawianie: {1}\nmerge: {2}\nquick: {3}", BubbleSortCount, InsertionSortCount, MergeSortCount, QuickSortCount, 10000);
             BubbleSortCount = 0;
             InsertionSortCount = 0;
             MergeSortCount = 0;
