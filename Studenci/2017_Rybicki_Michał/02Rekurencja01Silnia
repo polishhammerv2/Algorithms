@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace zadanie_1_silnia
+{
+    class Program
+    {   static void Silnia(int n)
+        {
+            if (n < 2)
+                Console.WriteLine("silnia = 0");
+
+            else
+            {
+                int liczba = 1;
+                for (int x = 1; x <= n; x++)
+                {
+                    liczba = liczba * x;
+
+                }
+                Console.WriteLine("silnia = " + liczba);
+            }
+        }
+        static void Main(string[] args)
+        {
+            //Napisz program, który wyznaczy silnię z liczby n rekurencyjnym.
+            //silnia(n) = (n < 2 ? 1 : n * silnia(n))
+
+            Silnia(4);
+
+           
+            
+
+        }
+    }
+}
