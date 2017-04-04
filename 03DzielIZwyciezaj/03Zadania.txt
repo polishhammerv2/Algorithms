@@ -17,4 +17,4 @@ Zmodyfikuj poznane algorytmy sortowania tak by można było przy ich pomocy poso
 
 Zadanie 4
 -----------
-Zaimplementuj wybrane algorytmy sortowania tablic, tak by porządek sortowania mógł by zadawany poza algorytmem sortowania.
+Zaimplementuj wybrane algorytmy sortowania tablic, tak by porządek sortowania mógł być zadawany poza algorytmem sortowania.

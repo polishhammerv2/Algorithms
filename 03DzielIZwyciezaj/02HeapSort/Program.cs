@@ -33,10 +33,10 @@ namespace HeapSort {
             if(isLeaf(arr.Length, root)) Console.WriteLine("{0}{1}", space, arr[root]);
             else {
                 if(existsLeftChild(arr.Length, root))
-                    printHaep(arr, leftChild(root), space + "  ");
+                    printHaep(arr, leftChild(root), space + "   ");
                 Console.WriteLine("{0}{1}", space, arr[root]);
                 if(existsRightChild(arr.Length, root))
-                    printHaep(arr, rightChild(root), space + "  ");
+                    printHaep(arr, rightChild(root), space + "   ");
             }
         }
 
@@ -80,30 +80,30 @@ namespace HeapSort {
             Random rand = new Random();
             // przykład kopca
             const int M = 10;
-            int[] kopiec = new int[M] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            HeapSort h = new HeapSort();
-            //for(int i = 0; i < M; i++) kopiec[i] = rand.Next(1, 10);
-            Console.WriteLine("Tablica: {0}", string.Join(",", kopiec));
-            h.BuildHeap(kopiec);
-            Console.WriteLine("Tablica: {0}", string.Join(",", kopiec));
-            // wypisz kopiec "graficznie"
-            // przechyl głowę w lewo i użyj wyobraźni
-            h.printHaep(kopiec, 0, "");
+            //int[] kopiec = new int[M] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            //HeapSort h = new HeapSort();
+            ////for(int i = 0; i < M; i++) kopiec[i] = rand.Next(1, 10);
+            //Console.WriteLine("Tablica: {0}", string.Join(",", kopiec));
+            //h.BuildHeap(kopiec);
+            //Console.WriteLine("Tablica: {0}", string.Join(",", kopiec));
+            //// wypisz kopiec "graficznie"
+            //// przechyl głowę w lewo i użyj wyobraźni
+            //h.printHaep(kopiec, 0, "");
 
-            //const int N = 1000000;
-            //int[] tablica = new int[N];
-            
-            //Stopwatch sw = new Stopwatch();
+            const int N = 10000000;
+            int[] tablica = new int[N];
 
-            //for(int i = 0; i < N; i++) tablica[i] = rand.Next(1, 1000000);
+            Stopwatch sw = new Stopwatch();
 
-            ////Console.WriteLine("Tablica:{0}", string.Join(",", tablica));
-            //Console.Write("Heap: ");
-            //sw.Reset();
-            //sw.Start();
-            //new HeapSort().PerformHeapSort(tablica);
-            //sw.Stop();
-            //Console.WriteLine("Czas: {1}", string.Join(",", tablica), sw.Elapsed.TotalMilliseconds);
+            for(int i = 0; i < N; i++) tablica[i] = rand.Next(1, 100);
+
+            //Console.WriteLine("Tablica:{0}", string.Join(",", tablica));
+            Console.Write("Heap: ");
+            sw.Reset();
+            sw.Start();
+            new HeapSort().PerformHeapSort(tablica);
+            sw.Stop();
+            Console.WriteLine("Czas: {1}", string.Join(",", tablica), sw.Elapsed.TotalMilliseconds);
         }
     }
 }
