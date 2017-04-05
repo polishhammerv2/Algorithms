@@ -53,12 +53,12 @@ namespace _03BucketSort {
             }
         }
         static void Main(string[] args) {
-            const int N = 100000;
+            const int N = 10000000;
             int[] tablica = new int[N];
             Random rand = new Random();
             Stopwatch sw = new Stopwatch();
 
-            for(int i = 0; i < N; i++) tablica[i] = rand.Next(1, 100000);
+            for(int i = 0; i < N; i++) tablica[i] = rand.Next(1, 1000000);
 
             //Console.WriteLine("Tablica:{0}", string.Join(",", tablica));
             Console.Write("Heap: ");

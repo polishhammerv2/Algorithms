@@ -1,0 +1,18 @@
+Zadanie 1
+-----------
+Napisz algorytm scalania N (parametr) zbiorów uporządkowanych w jeden zbiór uporządkowany.
+
+Zadani 2
+-----------
+Napisz algorytm tworzący kopiec dla zadanej nieuporządkowanej tablicy liczb.
+
+Zadanie 3
+------------
+Napisz algorytm sortujący metodą BucketSort liczby 4-cyfrowe, w następujący sposób:
+1. Tworzymy 10 list: pojemników
+2. Daną liczbę dołączamy do listy o numerze (value mod 10) z zachowaniem kolejności
+3. Po dołączeniu wszystkich elsementów, scalamy listy w listę posortowaną.
+
+Zadanie 4
+------------
+Napisz program sprawdzający czy zadane drzewo binarne jest AVL.
