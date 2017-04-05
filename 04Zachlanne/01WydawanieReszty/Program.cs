@@ -10,7 +10,7 @@ namespace _01WydawanieReszty {
             //int [] nominalyMonet = { 20, 10, 5, 1 };
             //int kwotaDoWydania = 42;
 
-            int[] nominalyMonet = { 11, 5, 1 };
+            int[] nominalyMonet = { 11, 5, 3 };
             int kwotaDoWydania = 15;
 
             int[] licznikMonet = new int[nominalyMonet.Length];
