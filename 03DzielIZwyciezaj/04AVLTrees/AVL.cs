@@ -157,15 +157,15 @@ namespace _04AVLTrees {
         private void PreOrderDisplayTree(Node current) {
             if(current != null) {
                 Console.Write("({0}) ", current.data);
-                InOrderDisplayTree(current.left);
-                InOrderDisplayTree(current.right);
+                PreOrderDisplayTree(current.left);
+                PreOrderDisplayTree(current.right);
             }
         }
         private void PostOrderDisplayTree(Node current) {
             if(current != null) {
+                PostOrderDisplayTree(current.left);
+                PostOrderDisplayTree(current.right);
                 Console.Write("({0}) ", current.data);
-                InOrderDisplayTree(current.left);
-                InOrderDisplayTree(current.right);
             }
         }
         private int max(int l, int r) {
