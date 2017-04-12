@@ -46,6 +46,10 @@ namespace _03PlanowanieZadan {
                     maszyny.Add(m0);
                 }
                 m0.setJob(zadania[i].start, zadania[i].stop);
+                Console.WriteLine("Maszyna: {0}, pracuje nad: {1}", 
+                    maszyny.FindIndex(m => m.Equals(m0)),
+                    zadania[i]
+                    );
             }
             Console.WriteLine("Potrzeba {0} maszyn", maszyny.Count);
         }
