@@ -31,7 +31,7 @@ zaproponowaæ procedurê:
 
 Zadanie 4
 ----------
-Dla agorytmów sortowania:
+Dla algorytmów sortowania:
 https://github.com/tborzyszkowski/Algorithms/tree/master/03DzielIZwyciezaj/01Sortowanie
 zmodyfikowaæ je tak by dla sortowanej tablicy wypisywa³y:
 a) stan tablicy po ka¿dym przebiegu sortowania
