@@ -1,0 +1,136 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Numerics;
+
+namespace powtorkaZadanie2
+{
+    class Program
+    {
+        static int liczba_powtorzen_silnia = 0;
+        static long a(int n)
+        {
+            if (n > 0)
+            {
+                Console.Write("krok nr:  " + liczba_powtorzen_silnia++ + " ");
+                return n * a(n - 1);
+            }
+            return 1;
+        }
+
+        class HanoiMain
+        {
+            static int liczba_powtorzen_hanoi = 0;
+            static void MoveDisc(int numOfDiscs, Stack<String> fstTower,
+                                Stack<String> sndTower, Stack<String> pomTower)
+            {
+                if (numOfDiscs > 0)
+                {
+                    MoveDisc(numOfDiscs - 1, fstTower, pomTower, sndTower);
+                    sndTower.Push(fstTower.Pop());
+                    MoveDisc(numOfDiscs - 1, pomTower, sndTower, fstTower);
+                    liczba_powtorzen_hanoi++;
+                    Console.Write("krok nr:  " + liczba_powtorzen_hanoi + " ");
+                }
+
+            }
+
+            public static long fib_rek(long n)
+            {
+                if ((n == 0) || (n == 1)) return n;
+                else return fib_rek(n - 1) + fib_rek(n - 2);
+            }
+
+            public static BigInteger fib_iter(long n)
+            {
+                int i;
+                BigInteger w = 0, f0 = 0, f1 = 1;
+
+                for (i = 2; i < n + 1; i++)
+                {
+                    w = f0 + f1;
+                    f0 = f1;
+                    f1 = w;
+                    Console.WriteLine("krok nr:  " + liczba_powtorzen_fino++ + " ");
+                }
+                return w;
+            }
+            static int liczba_powtorzen_fino = 0;
+            static BigInteger[,] multiply(BigInteger[,] a, BigInteger[,] b)
+            {
+                BigInteger[,] result = new BigInteger[2, 2];
+                result[0, 0] = BigInteger.Add(BigInteger.Multiply(a[0, 0], b[0, 0]), BigInteger.Multiply(a[0, 1], b[1, 0]));
+                result[0, 1] = BigInteger.Add(BigInteger.Multiply(a[0, 0], b[0, 1]), BigInteger.Multiply(a[0, 1], b[1, 1]));
+                result[1, 0] = BigInteger.Add(BigInteger.Multiply(a[1, 0], b[0, 0]), BigInteger.Multiply(a[1, 1], b[1, 0]));
+                result[1, 1] = BigInteger.Add(BigInteger.Multiply(a[1, 0], b[0, 1]), BigInteger.Multiply(a[1, 1], b[1, 1]));
+                return result;
+            }
+
+            static BigInteger[,] fibMatrixPower(BigInteger[,] m, int n)
+            {
+                if (n == 1) return m;
+                else if (n % 2 == 0) return fibMatrixPower(multiply(m, m), n / 2);
+                else return multiply(fibMatrixPower(multiply(m, m), (n - 1) / 2), m);
+            }
+
+            public static BigInteger fibobacciFast(int n)
+            {
+                BigInteger[,] result = new BigInteger[2, 2] { { 1, 1 }, { 1, 0 } };
+                return fibMatrixPower(result, n)[0, 1];
+            }
+            static void Main(string[] args)
+            {
+                Console.WriteLine("silnia z 5:");
+                a(5);
+                Console.WriteLine();
+
+                Console.WriteLine("Kolejno dla silni z 5,6,7. Liczba operacji zwieksza sie o jeden wiec O(n)");
+                Console.WriteLine();
+                Console.WriteLine("Hanoi dla 5 krazkow:");
+                Stack<String> towerA = new Stack<String>(),
+                    towerB = new Stack<String>(),
+                    towerPom = new Stack<String>();
+                String s = "";
+                const int N = 5;
+                for (int i = 0; i < N; i++)
+                {
+                    s += "o";
+                    towerA.Push(s);
+                }
+
+                MoveDisc(N, towerA, towerB, towerPom);
+                Console.WriteLine();
+                Console.WriteLine("Hanoi dla 5 krazkow jest 32, dla 6 krazko jest 64 dla siedmiu 124 wiec O(2^n)");
+                Console.WriteLine();
+
+
+                int N_start = 0, N_stop = 10;
+                BigInteger res;
+                Stopwatch sw = new Stopwatch();
+
+                for (int i = N_start; i < N_stop; i++)
+                {
+                    //sw.Reset();
+                    //sw.Start();
+                    //res = fib_rek(i);
+                    //sw.Stop();
+                    //Console.Write("rek({0:G3}) = {1:G7} ", i, res);
+                    //Console.WriteLine("{0:F5} ", sw.Elapsed.TotalMilliseconds);
+                    sw.Reset();
+                    sw.Start();
+                    res = fib_iter(i);
+                    sw.Stop();
+                    Console.Write("itr({0:G3}) = {1:G7} ", i, res);
+                    Console.WriteLine("{0:F5} ", sw.Elapsed.TotalMilliseconds);
+                }
+                Console.WriteLine("Przy kazdej itr liczba krokow zwieksza sie o 1 wiec O(n)");
+
+                
+            }
+        }
+    }
+}
+
