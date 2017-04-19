@@ -1,0 +1,90 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _3._1Zadanie1
+{
+    class Program
+    {
+        static void Swap(int[] tab, int i, int j)
+        {
+            int pom = tab[i];
+            tab[i] = tab[j];
+            tab[j] = pom;
+        }
+        //
+        // Sortowanie bąbelkowe
+        //
+        static void sortowanieBabelkowe(int[] tab)
+        {
+            for (int i = 1; i < tab.Length; i++)
+                for (int j = tab.Length - 1; j > 0; j--)
+                    if (tab[j - 1] > tab[j])
+                        Swap(tab, j - 1, j);
+        }
+        static void scalanieDwochTablic(int[] tab, int[] tab1)
+        {
+            int licznikZbioru2 = 0;
+            for (int x = 5; x < 10; x++)
+            {
+
+                tab[x] = tab1[licznikZbioru2];
+                licznikZbioru2++;
+            }
+
+        }
+
+        static void Main(string[] args)
+        {
+            int[] zbior1 = new int[] { 10, 33, 15, 73, 94, 100, 100, 100, 100, 100 };
+            int[] zbior2 = new int[] { 120, 3, 12, 33, 21 };
+
+
+            Console.Write("zbior1");
+            Console.WriteLine();
+
+
+            sortowanieBabelkowe(zbior1);
+            for (int x = 0; x < 5; x++)
+                Console.Write(zbior1[x] + " ");
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("zbior2");
+
+
+            sortowanieBabelkowe(zbior2);
+            for (int x = 0; x < 5; x++)
+                Console.Write(zbior2[x] + " ");
+
+            Console.WriteLine();
+            Console.WriteLine();
+            //scalanie zbior1 i zbior2
+
+            Console.WriteLine("połączone");
+
+            scalanieDwochTablic(zbior1, zbior2);
+
+            for (int x = 0; x < 10; x++)
+                Console.Write(zbior1[x] + " ");
+            Console.WriteLine();
+            Console.WriteLine();
+
+
+
+            Console.Write("posortowane");
+            Console.WriteLine();
+
+            sortowanieBabelkowe(zbior1);
+            for (int x = 0; x < 10; x++)
+                Console.Write(zbior1[x] + " ");
+
+
+            Console.WriteLine();
+            Console.WriteLine("zlozonosc allgorytmu wynosi dla sortowania O(n^2) ");
+        }
+    }
+}
