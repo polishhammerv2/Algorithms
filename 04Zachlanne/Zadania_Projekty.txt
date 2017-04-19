@@ -1,0 +1,33 @@
+1 Obrotnica kolejowa
+----------------------
+Danych jest N torów kolejowych dochodz¹cych do obrotnicy znajduj¹cej siê w centrum.
+Na ka¿dym torze jest n_i wagonów. Tory posiadaj¹ nieskoñczon¹ pojemnoœæ.
+Obrotnica posada zadan¹ pojemnoœæ POJ wagonów i przyjmuje oraz wydaje wagony tylko z jednej strony.
+Obrotnica realizuje nastêpuj¹ce rozkazy:
+r n: obróæ siê o n torów w prawo
+l n: obróæ siê o n torów w lewo
+i n: pobierz n wagonów z bie¿¹cego toru na obrotnicê, je¿eli jest miejsce, je¿eli nie ma to przyjmnij tyle ile mo¿na
+o n: wydaj n wagonów z obrotnicy na bie¿¹cy tor, jezlei na obrotnicy jest mniej wagonów ni¿ n, to wydaj tyle ile mo¿na
+Wagony s¹ ponumerowane kolejnymi liczbami ca³kowitymi.
+
+Napisaæ program, który dla zadanego stanu pocz¹tkowego:
+- iloœæ torów
+- pojemnoœæ obrotnicy 
+- rozmieszczenie wagonów na torach i obrotnicy
+oraz danych wejœciowych w postaci listy rozkazów (ka¿dy w jednej linii) wypisze stan koñcowy torów i obrotnicy.
+
+UWAGA: Nie mo¿na korzystaæ z kolekcji dostarczanych przez bibliotekê .Net
+
+2 Odwrotna notacja polska
+---------------------------
+Zrealizowaæ proces wyliczania wyra¿eñ arytmetycznych za pomoc¹ odwrotnej notacji polskiej (ONP).
+Wyra¿enia powinny byæ zadawane w postaci infixowej, np:
+ ((10 + (20 * 30)) - (0 - 15))
+nastêpnie zamieniame na ONP i wyliczane.
+opis notacji: https://pl.wikipedia.org/wiki/Odwrotna_notacja_polska
+Program powinien wypisywaæ poszczególne etapy wyliczania ONP zaczynaj¹c od postaci pocz¹tkowej a na koñcowym wyniku koñcz¹c
+
+UWAGA: Nie mo¿na korzystaæ z kolekcji dostarczanych przez bibliotekê .Net
+
+
+3 

@@ -1,0 +1,62 @@
+Zadanie 1
+-----------
+W przyk³adzie:
+https://github.com/tborzyszkowski/Algorithms/tree/master/01Podstawy/02PrzywodcaCiagu
+analizowaliœmy algorytm wyszukuj¹cy przywódcê ci¹gu.
+- zmodyfikowaæ algorytm tak by najpierw posortowaæ tablicê a nastêpnie szukaæ przywódcy
+	jak¹ z³o¿onoœæ wówczas osi¹gniemy?
+- zaimplementuj algorytm poszukiwania przywódcy ci¹gu nastêuj¹co:
+	1   if n=1 then przywódc¹ jest pojedynczy element tablicy
+	2   else 
+	3       podziel tablicê na dwie po³owy;
+	4       rekurencyjnie oblicz przywódcê lewej i prawej po³owy tablicy;
+	5       sprawdŸ w czasie O(n), który z nich jest przywódc¹ ca³oœci
+  jaka jest z³o¿onoœæ takiego algorytmu
+  
+Zadanie 2
+-----------
+Udowodniæ stosuj¹c indukcjê matematyczn¹, ¿e z³o¿onoœæ algorytmów jest:
+- rekurencyjna silnia = O(n)
+- rekurencyjny Hanoi = O(2^n)
+- itracyjny Fibonacci = O(n)
+
+Zadanie 3
+-----------
+Dla implementacji listy jedokierunkowej:
+https://github.com/tborzyszkowski/Algorithms/tree/master/02Rekurencja/06Listy
+zaproponowaæ procedurê:
+- usuwania drugiego elementu listy (jezeli istnieje)
+- usuwania ostatniego elementu listy
+- usuwania elementu o podanym indeksie
+
+Zadanie 4
+----------
+Dla agorytmów sortowania:
+https://github.com/tborzyszkowski/Algorithms/tree/master/03DzielIZwyciezaj/01Sortowanie
+zmodyfikowaæ je tak by dla sortowanej tablicy wypisywa³y:
+a) stan tablicy po ka¿dym przebiegu sortowania
+b) liczbê przestawieñ w ca³ym procesie sortowania
+"Przy tablicy":
+- dla zadanej tablicy algorytmu zasymulowaæ wyniki z czêsci a) i b)
+- czy potrafisz po analizie wyników poœrednich algorytmów sortowania stwierdziæ, którego algorytmu u¿yto
+
+Zadanie 5
+----------
+Dla zadanej tablicy zasymulowaæ etapy tworzenia kopca wg. procedury:
+https://github.com/tborzyszkowski/Algorithms/tree/master/03DzielIZwyciezaj/02HeapSort
+
+Zadanie 6
+----------
+Napisz algorytm scalania N (parametr) zbiorów uporz¹dkowanych w jeden zbiór uporz¹dkowany.
+Jaka jest z³o¿onoœæ takiego algorytmu?
+
+Zadanie 7
+----------
+a) Dla zadanego drzewa AVL zaproponowaæ procedurê sprawdzania czy posiada w³asnoœæ AVL (balance factor = -1, 0 lub 1)
+b) Jakie znasz metody balasowania drzewa AVL (omów na przyk³adach)
+
+Zadanie 8
+----------
+Ci¹g³y problem plecakowy.
+Dla plecaka o zadanych parametrach i przedmiotach o zadanych wartoœciach, iloœciach i wagach zaproponowaæ optymalne pakowanie plecaka. 
+
