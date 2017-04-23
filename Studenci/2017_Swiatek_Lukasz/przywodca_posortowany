@@ -49,7 +49,7 @@ namespace _02PrzywodcaCiagu
             {
                 Console.Write(" " + y);
             }
-            Console.Write("  Gdy elementy są posortowane złożoność jest liniowa wynosi O(N - najlepszy przypadek)");
+            Console.Write("  Gdy elementy są posortowane złożoność jest liniowa wynosi O(N)  najlepszy przypadek");
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
             int wynik = PrzywodcaCiagu(A);
