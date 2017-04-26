@@ -1,0 +1,300 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _01Sortowanie
+{
+    class Program
+    {
+        static void Zamien(int[] tab, int i, int j)
+        {
+            int pom = tab[i];
+            tab[i] = tab[j];
+            tab[j] = pom;
+        }
+        //
+        // Sortowanie bąbelkowe
+        //
+        static void sortowanieBabelkowe(int[] tab)
+        {
+            int n = tab.Length;
+            int liczba_przestawien=0;
+            for (int i = 1; i < tab.Length; i++)
+            {
+                for (int j = 0; j < tab.Length - 1; j++)
+                {
+                    if (tab[j] > tab[j + 1])
+                    {
+                        Zamien(tab, j, j + 1);
+                        liczba_przestawien++;
+                    }
+                }
+                Console.WriteLine();
+                Console.Write("Tablica po {0} przebiegu:", i);
+                foreach(int x in tab)
+                {
+                    Console.Write(x+"," );
+                }
+                n--;
+                
+            }
+            Console.WriteLine();
+            Console.WriteLine("Liczba przestawień w procesie sortowania to {0}", liczba_przestawien);
+        }
+
+        //
+        // Sortowanie przez wstawianie
+        //
+        static void sortowanieWstawianie(int[] tab)
+        {
+            int x, j,liczba_przestawien=0;
+            for (int i = 1; i < tab.Length ; i++)
+            {
+                //a[0..i-1] jest już posortowana
+                x = tab[i]; //odkładamy element z pozycji i
+                j = i;
+                while (j > 0 && x < tab[j - 1])
+                {
+                    tab[j] = tab[j - 1]; //przesuwamy element większy od x o jedną pozycję w prawo    
+                    j = j - 1;
+                    liczba_przestawien++;
+                }
+                tab[j] = x;
+                Console.WriteLine();
+                Console.Write("Tablica po {0} przebiegu:", i);
+                foreach(int y in tab)
+                {
+                    Console.Write(y + ",");
+                }
+                
+            }
+            Console.WriteLine();
+            Console.WriteLine("Liczba przestawień w sortowaniu przez wstawianie {0}", liczba_przestawien);
+        }
+
+        //
+        // Merge Sort
+        //
+        public static void MergeSort(int[] input, int low, int high)
+        {
+            if (low < high)
+            {
+                int middle = (low / 2) + (high / 2);
+                MergeSort(input, low, middle);
+                MergeSort(input, middle + 1, high);
+                Merge(input, low, middle, high);
+            }
+        }
+
+        public static void MergeSort(int[] input)
+        {
+            MergeSort(input, 0, input.Length - 1);
+        }
+
+        private static void Merge(int[] input, int low, int middle, int high)
+        {
+            int liczba_przestawien = 0;
+            int left = low;
+            int right = middle + 1;
+            int[] tmp = new int[(high - low) + 1];
+            int tmpIndex = 0;
+
+            while ((left <= middle) && (right <= high))
+            {
+                if (input[left] < input[right])
+                {
+                    tmp[tmpIndex] = input[left];
+                    left = left + 1;
+                    liczba_przestawien++;
+                }
+                else
+                {
+                    tmp[tmpIndex] = input[right];
+                    right = right + 1;
+                    
+                }
+                tmpIndex = tmpIndex + 1;
+            }
+            
+            if (left <= middle)
+            {
+                while (left <= middle)
+                {
+                    tmp[tmpIndex] = input[left];
+                    left = left + 1;
+                    tmpIndex = tmpIndex + 1;
+                    
+                }
+            }
+            if (right <= high)
+            {
+                while (right <= high)
+                {
+                    tmp[tmpIndex] = input[right];
+                    right = right + 1;
+                    tmpIndex = tmpIndex + 1;
+                   
+                }
+            }
+            
+            for (int i = 0; i < tmp.Length; i++)
+            {
+                input[low + i] = tmp[i];
+                
+               }
+
+            
+            Console.WriteLine();
+            Console.Write("Tablica po aktualnym przebiegu: ");
+                
+            foreach (int x in input)
+                {
+                    Console.Write(x + ",");
+                }
+            
+        }
+       
+
+        //
+        // QuictSort
+        //
+        public static void QuickSort(int[] input, int left, int right)
+        {
+            if (left < right)
+            {
+                int q = Partition(input, left, right);
+                QuickSort(input, left, q - 1);
+                QuickSort(input, q + 1, right);
+            }
+        }
+
+        private static int Partition(int[] input, int left, int right)
+        {
+            
+            int pivot = input[right];
+            int temp;
+
+            int i = left;
+            for (int j = left; j < right; j++)
+            {
+                if (input[j] <= pivot)
+                {
+                    temp = input[j];
+                    input[j] = input[i];
+                    input[i] = temp;
+                    i++;
+                   
+                }
+                
+            }
+
+            input[right] = input[i];
+            input[i] = pivot;
+            Console.WriteLine();
+            Console.Write("Tablica po aktualnym przebiegu: ");
+            foreach(int x in input)
+            {
+                Console.Write(x + ",");
+            }
+            
+            return i;
+            
+        }
+
+       
+        static void Main(string[] args)
+        {
+            int N_babelkowe = 10;
+            int[] tablica_babelkowe = new int[N_babelkowe];
+            Random rand = new Random();
+            Stopwatch sw = new Stopwatch();
+
+            for (int i = 0; i < N_babelkowe; i++)
+            {
+                tablica_babelkowe[i] = rand.Next(1, 10);
+            }
+            Console.Write("Sortowanie bąbelkowe: ");
+            Console.WriteLine();
+            Console.Write("Przed sortowanie bąbelkowym: ");
+            foreach (int x in tablica_babelkowe)
+            {
+                Console.Write(x+", " );
+            }
+            
+            sw.Reset();
+            sw.Start();
+            sortowanieBabelkowe(tablica_babelkowe);
+            sw.Stop();
+            Console.WriteLine("Czas: {1}", string.Join(",", tablica_babelkowe), sw.Elapsed.TotalMilliseconds);
+
+            Console.WriteLine();
+            int N_wstawianie = 10;
+            int[] tablica_wstawianie = new int[N_wstawianie];
+          
+
+             for (int i = 0; i < N_wstawianie; i++)
+            {
+                tablica_wstawianie[i] = rand.Next(1, 10);
+            }
+            Console.Write("Sortowanie przez wstawianie: ");
+            Console.WriteLine();
+            Console.Write("Przed sortowanie przez wstawianie: ");
+            foreach (int x in tablica_wstawianie)
+            {
+                Console.Write(x + ", ");
+            }
+
+            sw.Reset();
+            sw.Start();
+            sortowanieWstawianie(tablica_wstawianie);
+            sw.Stop();
+            Console.WriteLine("Czas: {1}", string.Join(",", tablica_wstawianie), sw.Elapsed.TotalMilliseconds);
+
+            Console.WriteLine();
+
+
+             int N_scalanie = 10;
+             
+             int[] tablica_scalanie = new int[N_scalanie];
+             
+            for (int i = 0; i <= N_scalanie - 1; i++)
+            {
+                tablica_scalanie[i] = rand.Next(1,10);
+            }
+              Console.Write("Sortowanie przez scalanie(Merge Sort): ");
+              Console.WriteLine();
+              Console.Write("Przed sortowanie przez scalanie: ");
+              foreach (int x in tablica_scalanie)
+            {
+                Console.Write(x + ", ");
+            }
+             sw.Reset();
+             sw.Start();
+             MergeSort(tablica_scalanie);
+             sw.Stop();
+             Console.WriteLine();
+             Console.WriteLine("Czas: {1}", string.Join(",", tablica_scalanie), sw.Elapsed.TotalMilliseconds);
+             
+            Console.WriteLine();
+
+             int N_quick = 10;
+             int[] tablica_quick = new int[N_quick];
+            for (int i = 0; i < N_quick; i++)
+            {
+                tablica_quick[i] = rand.Next(1,10);
+            }
+             
+             Console.Write("Quick: ");
+             sw.Reset();
+             sw.Start();
+             QuickSort(tablica_quick, 0, tablica_quick.Length - 1);
+             sw.Stop();
+            Console.WriteLine();
+             Console.WriteLine("Czas: {1}", string.Join(",", tablica_quick), sw.Elapsed.TotalMilliseconds);
+             Console.ReadKey();
+        }
+    }
+}
