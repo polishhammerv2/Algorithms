@@ -26,23 +26,26 @@ namespace _01Newton {
         }
 
         static void Main(string[] args) {
-            int n = 25, k = 13;
+            int n = 49, k = 25;
+            //int n = 25, k = 13;
             long wynik;
 
             Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
-            wynik = NewtonRek(n, k);
-            stopwatch.Stop();
-            Console.WriteLine("Wynik = {0}, milis ={1}",
-                wynik, stopwatch.ElapsedMilliseconds);
-            stopwatch.Reset();
+            //stopwatch.Start();
+            //wynik = NewtonRek(n, k);
+            //stopwatch.Stop();
+            //Console.WriteLine("Wynik = {0}, milis = {1}",
+            //    wynik, stopwatch.ElapsedMilliseconds);
+            //stopwatch.Reset();
 
             stopwatch.Start();
             wynik = NewtonDyn(n, k);
             stopwatch.Stop();
-            Console.WriteLine("Wynik = {0}, milis ={1}",
+            Console.WriteLine("Wynik = {0}, milis = {1}",
                 wynik, stopwatch.ElapsedMilliseconds);
 
         }
+        // TODO: Zadanie
+        //  Zrób to samo dla rekurencyjnej wersji Fibonacciego.
     }
 }
