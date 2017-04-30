@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace _02NajdluzszyPodciag {
 
     class Program {
-        static string NajdlPodciag(string A, String B) {
+        static string NajdlPodciag(string A, string B) {
             int[,] L = new int[A.Length+1, B.Length+1];
 
             for(int i = 0; i < A.Length; i++)
@@ -37,7 +37,8 @@ namespace _02NajdluzszyPodciag {
         }
         static void Main(string[] args) {
             //string A = "HALO", B = "ALOHA";
-            string A = "RESZKA", B = "MIESZKANIE";
+            //string A = "PROMOTOR", B = "MIESZKANIE";
+            string A = "WIELOBRANZOWY", B = "PRZEBRANZOWIENIE";
 
             Console.WriteLine(NajdlPodciag(A, B));
         }
