@@ -30,4 +30,85 @@ Program powinien wypisywaæ poszczególne etapy wyliczania ONP zaczynaj¹c od posta
 UWAGA: Nie mo¿na korzystaæ z kolekcji dostarczanych przez bibliotekê .Net
 
 
-3 
+3 Kapitan Bajtazar
+-------------------
+Kapitan Bajtazar przemierza wody Morza Bajtockiego wraz ze swoim niezast¹pionym pierwszym oficerem Bajtkiem. 
+Na morzu znajduje siê n wysp, które numerujemy liczbami od 1 do n. 
+Przy wyspie numer 1 przycumowa³ statek kapitana. W ramach wyprawy kapitan planuje pop³yn¹æ na wyspê numer n.
+
+W trakcie rejsu statek zawsze porusza siê w jednym z czterech kierunków œwiata: na pó³noc, po³udnie, wschód lub zachód. 
+W ka¿dym momencie przy sterach stoi albo kapitan, albo pierwszy oficer. Za ka¿dym razem, gdy statek wykona skrêt o 90°, zmieniaj¹ siê oni przy sterach.
+
+Po drodze statek mo¿e zatrzymywaæ siê przy innych wyspach. 
+Po ka¿dym postoju kapitan mo¿e zdecydowaæ, czy obejmuje stery jako pierwszy. Innymi s³owy, na ka¿dym fragmencie trasy prowadz¹cym z wyspy do wyspy jeden z marynarzy obejmuje stery, gdy statek p³ynie na pó³noc lub po³udnie, a drugi z nich steruje podczas rejsu na wschód lub zachód. 
+W szczególnoœci, jeœli pewien fragment trasy prowadzi dok³adnie w jednym z czterech kierunków œwiata, na tym fragmencie steruje tylko jeden z marynarzy.
+
+Kapitan zastanawia siê teraz, jak zaplanowaæ trasê najbli¿szego rejsu i podzia³ pracy, by spêdziæ jak najmniej czasu przy sterze. 
+Jednoczeœnie kapitan nie przejmuje siê, jak d³uga bêdzie wyznaczona trasa. Przyjmujemy, ¿e statek p³ynie ze sta³¹ prêdkoœci¹ jednej jednostki na godzinê.
+
+Wejœcie
+
+Pierwszy wiersz wejœcia zawiera jedn¹ liczbê ca³kowit¹ nn ( 2<=n<=200 000 ) oznaczaj¹c¹ liczbê wysp na morzu. 
+Dla uproszczenia na Morze Bajtockie nanosimy uk³ad wspó³rzêdnych, którego osie s¹ równoleg³e do kierunków œwiata. 
+Ka¿d¹ z wysp reprezentujemy jako pojedynczy punkt. Kolejne n wierszy zawiera opisy wysp: 
+i-ty z nich zawiera dwie liczby ca³kowite x_i, y_i ( 0<x_i, y_i<1 000 000 000 ) oznaczaj¹ce wspó³rzêdne i-tej wyspy na morzu. Ka¿da wyspa ma inne wspó³rzêdne.
+
+Wyjœcie
+
+Twój program powinien wypisaæ na wyjœcie jedn¹ liczbê ca³kowit¹, oznaczaj¹c¹ najmniejsz¹ liczbê godzin, przez które kapitan bêdzie musia³ sterowaæ statkiem na trasie z wyspy numer 1 do wyspy numer n.
+
+Przyk³ad
+
+Dla danych wejœciowych:
+5
+2 2
+1 1
+4 5
+7 1
+6 7
+poprawnym wynikiem jest:
+2
+
+Wyjaœnienie do przyk³adu: Kapitan mo¿e wyznaczyæ trasê, któr¹ zaznaczono na obrazku (kaprys-crop.gif). 
+W trakcie rejsu z wyspy 1 (wspó³rzêdne (2, 2)) na wyspê 4 (wspó³rzêdne (7, 1)) kapitan steruje tylko przez godzinê, 
+gdy statek p³ynie na po³udnie. 
+W trakcie drugiego fragmentu podró¿y kapitan steruje jedynie wtedy, gdy statek porusza siê na wschód.
+
+4 Projekty
+---------------
+Bajtazar w³aœnie awansowa³ na szefa dzia³u informatyki Bardzo Wa¿nej Instytucji Pañstwowej. 
+W jego obowi¹zkach jest zarz¹dzanie projektami informatycznymi. Instytucja przygotowa³a listê potencjalnych projektów, które powinny zostaæ wykonane. 
+Niestety wykonanie niektórych projektów zale¿y od pomyœlnego wykonania innych. 
+Dodatkowo, ka¿dy projekt charakteryzuje siê minimaln¹ liczb¹ programistów, którzy s¹ konieczni do jego wykonania.
+
+Ze wzglêdu na ciêcia bud¿etowe nie jest mo¿liwe wykonanie wszystkich projektów. 
+Zarz¹d zdecydowa³, ¿e zrealizowane zostanie jedynie kk projektów. 
+Bajtazar dosta³ polecenie zatrudnienia minimalnej liczby programistów, którzy s¹ konieczni do zrealizowania co najmniej k projektów (przy czym projekty mog¹ byæ realizowane sekwencyjnie, tak ¿e programiœci s¹ przenoszeni z jednego projektu do drugiego).
+
+Napisz program, który pomo¿e Bajtazarowi i wyznaczy minimaln¹ liczbê programistów, których nale¿y zatrudniæ.
+
+Wejœcie
+
+W pierwszym wierszu standardowego wejœcia znajduj¹ siê trzy liczba ca³kowite n, m i k (1<=n<=100 000, 0<=m<=500 000, 0<=k<=n), pooddzielane pojedynczymi odstêpami i oznaczaj¹ce odpowiednio liczbê projektów, liczbê zale¿noœci pomiêdzy projektami oraz minimaln¹ liczbê projektów, które nale¿y zrealizowaæ. W kolejnych n wierszach zosta³y zapisane informacje o liczbie programistów koniecznych do wykonania projektów. W (i+1)-szym wierszu zosta³a zapisana liczba ca³kowita p_i ( 1<=p_i<=100000000) oznaczaj¹ca, ¿e do wykonania i-tego projektu konieczne jest zatrudnienie p_i programistów. 
+W kolejnych m wierszach zosta³y zapisane informacje o zale¿noœciach pomiêdzy projektami. Ka¿dy z tych wierszy zawiera dwie liczby ca³kowite a, b ( 1<=a,b<=n, a!=b ) oddzielone pojedynczym odstêpem i oznaczaj¹ce, ¿e do wykonania projektu a konieczne jest ukoñczenie projektu b.
+
+Mo¿esz za³o¿yæ, ¿e zale¿noœci pomiêdzy projektami nie tworz¹ cykli.
+
+Wyjœcie
+
+W jedynym wierszu standardowego wyjœcia nale¿y wypisaæ minimaln¹ liczbê programistów, których nale¿y zatrudniæ, tak by by³o mo¿liwe wykonanie kk projektów.
+
+Przyk³ad
+
+Dla danych wejœciowych:
+5 3 3
+10
+500
+150
+200
+100
+1 2
+1 3
+4 5
+poprawnym wynikiem jest:
+200
