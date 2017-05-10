@@ -11,12 +11,36 @@ o n: wydaj n wagonów z obrotnicy na bie¿¹cy tor, jezlei na obrotnicy jest mniej 
 Wagony s¹ ponumerowane kolejnymi liczbami ca³kowitymi.
 
 Napisaæ program, który dla zadanego stanu pocz¹tkowego:
-- iloœæ torów
+- liczba torów
 - pojemnoœæ obrotnicy 
 - rozmieszczenie wagonów na torach i obrotnicy
 oraz danych wejœciowych w postaci listy rozkazów (ka¿dy w jednej linii) wypisze stan koñcowy torów i obrotnicy.
 
 UWAGA: Nie mo¿na korzystaæ z kolekcji dostarczanych przez bibliotekê .Net
+
+przyk³adowy plik wejœciowy:
+----------------------------------------------
+5             # liczba torów
+7             # pojemnoœæ obrotnicy 
+1 1 2 3 4 5   # 1szy tor 5 wagonów o numerach 1 2 3 4 5 itd. ....
+2 6
+3             # brak wagonów na tym torze
+4 7 8 9    
+5 10
+11 12 13      # numery wagonów na obrotnicy
+r 3           # rozkazy
+l 10
+i 1
+r 3
+o 2
+----------------------------------------------
+Wynik:
+1 <lista numerów wagonów na torze 1>
+1 <lista numerów wagonów na torze 2>
+1 <lista numerów wagonów na torze 3>
+1 <lista numerów wagonów na torze 4>
+1 <lista numerów wagonów na torze 5>
+<lista numerów wagonów na obrotnicy>
 
 2 Odwrotna notacja polska
 ---------------------------
