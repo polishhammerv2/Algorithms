@@ -1,3 +1,10 @@
+------------------------------------------------------------------------
+UWAGA:
+Mo¿na wybieraæ tak¿e tematy projektów ze strony:
+http://smurf.mimuw.edu.pl/node/27
+
+------------------------------------------------------------------------
+
 1 Obrotnica kolejowa
 ----------------------
 Danych jest N torów kolejowych dochodz¹cych do obrotnicy znajduj¹cej siê w centrum.
