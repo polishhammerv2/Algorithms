@@ -36,10 +36,10 @@ o 2
 ----------------------------------------------
 Wynik:
 1 <lista numerów wagonów na torze 1>
-1 <lista numerów wagonów na torze 2>
-1 <lista numerów wagonów na torze 3>
-1 <lista numerów wagonów na torze 4>
-1 <lista numerów wagonów na torze 5>
+2 <lista numerów wagonów na torze 2>
+3 <lista numerów wagonów na torze 3>
+4 <lista numerów wagonów na torze 4>
+5 <lista numerów wagonów na torze 5>
 <lista numerów wagonów na obrotnicy>
 
 2 Odwrotna notacja polska
