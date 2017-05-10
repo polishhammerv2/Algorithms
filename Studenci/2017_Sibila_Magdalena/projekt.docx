@@ -1,0 +1,25 @@
+Zadanie EST (Estetyczne ci¹gi),
+
+W Bajtocji ci¹g liczbowy a1,…,aka1,…,ak jest uwa¿any za estetyczny, jeœli ka¿de dwa kolejne elementy ci¹gu ró¿ni¹ siê co najwy¿ej o 1:
+|ai+1?ai|?1 dla 1?i<k|ai+1?ai|?1 dla 1?i<k
+Na przyk³ad ci¹g 1,1,2,1,0,01,1,2,1,0,0 jest estetyczny, natomiast 1,3,4,31,3,4,3 nie jest estetyczny.
+Bajtazar otrzyma³ ci¹g sk³adaj¹cy siê z nn liczb: s1,…,sns1,…,sn, chcia³by z niego otrzymaæ jak najd³u¿szy ci¹g estetyczny. Mo¿e wybraæ dowolne elementy wejœciowego ci¹gu i dowolnie zmieniaæ ich kolejnoœæ.
+Wejœcie
+Pierwszy wiersz wejœcia zawiera jedn¹ liczbê ca³kowit¹ nn ( 1?n?1000001?n?100000 ), oznaczaj¹c¹ d³ugoœæ wejœciowego ci¹gu. Kolejne nn wierszy zawiera opis ci¹gu: ii-ty z nich zawiera jedn¹ liczbê ca³kowit¹ sisi ( 0?si?10000000000?si?1000000000 ) oznaczaj¹ce kolejne elementy wejœciowego ci¹gu.
+Wyjœcie
+Twój program powinien wypisaæ na wyjœcie jedn¹ liczbê ca³kowit¹, oznaczaj¹c¹ maksymaln¹ d³ugoœæ estetycznego ci¹gu, który mo¿na otrzymaæ z s1,…,sns1,…,sn.
+Przyk³ad
+Dla danych wejœciowych:
+7
+1
+6
+2
+5
+7
+6
+10
+poprawnym wynikiem jest:
+4
+// poprawnym wynikiem jest 5 dla ci¹gu: 7 6 5 6 7 
+Wyjaœnienie do przyk³adu: Dla przyk³adowego ci¹gu mo¿emy otrzymaæ estetyczny ci¹g d³ugoœci 4: 6 5 6 7.
+
