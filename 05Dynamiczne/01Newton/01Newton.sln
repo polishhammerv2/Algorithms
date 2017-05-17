@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02NajdluzszyPodciag", "..\0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03MnozenieCiaguMacierzy", "..\03MnozenieCiaguMacierzy\03MnozenieCiaguMacierzy.csproj", "{3A1C42B3-50A5-4ABF-85DE-210A55AF67B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04NajkrotszeSciezkiFloyd", "..\04NajkrotszeSciezkiFloyd\04NajkrotszeSciezkiFloyd.csproj", "{30DDF3E2-1A67-4A0B-925D-A6BDA7FDADE5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3A1C42B3-50A5-4ABF-85DE-210A55AF67B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A1C42B3-50A5-4ABF-85DE-210A55AF67B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A1C42B3-50A5-4ABF-85DE-210A55AF67B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30DDF3E2-1A67-4A0B-925D-A6BDA7FDADE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30DDF3E2-1A67-4A0B-925D-A6BDA7FDADE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30DDF3E2-1A67-4A0B-925D-A6BDA7FDADE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30DDF3E2-1A67-4A0B-925D-A6BDA7FDADE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
