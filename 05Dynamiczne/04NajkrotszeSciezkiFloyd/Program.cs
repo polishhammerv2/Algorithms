@@ -38,6 +38,7 @@ namespace _04NajkrotszeSciezkiFloyd {
                             distance[i, j] = distance[i, k] + distance[k, j];
                     }
                 }
+                Print(distance, verticesCount);
             }
 
             Print(distance, verticesCount);
