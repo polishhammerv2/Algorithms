@@ -1,0 +1,66 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace przywodca_dziel_i_zwyciezaj
+{
+    class Program
+    {   
+
+        static int dziel_i_zwyciezaj(int [] A, int indeks_pierwszy, int indeks_ostatni)
+        {
+            if (indeks_pierwszy == indeks_ostatni)
+            {
+                return A[indeks_pierwszy];
+            }
+            else
+            {
+                int polowa1 = dziel_i_zwyciezaj(A, indeks_pierwszy, (indeks_pierwszy + indeks_ostatni) / 2);
+                int polowa2 = dziel_i_zwyciezaj(A, (indeks_pierwszy + indeks_ostatni)/2 + 1,indeks_ostatni);
+                if (polowa1 == polowa2)
+                {
+                    return polowa1;
+                }
+                else
+                {
+                    int ilosc_wystapien = 0;
+                    for (int i = 0; i <= A.Length - 1; i++)
+                    {
+                        if (polowa1 == A[i]) {
+                            ilosc_wystapien ++;
+                        }
+                    }
+                    if (ilosc_wystapien > (indeks_ostatni - indeks_pierwszy + 1)/ 2 + 1)
+                    {
+                        return polowa1;
+                    }
+                    else
+                    {
+                        return polowa2;
+                    }
+                }
+            }
+                }
+        static void Main(string[] args)
+        {
+            // int[] A = { 1, 1, 1, 2, 2, 3, 3, 1, 1, 9, 1, 1 };
+            int n = 10;
+            int[] A = new int[n];
+            Random losowe = new Random();
+            for(int i = 0; i < n; i++)
+            {
+                A[i] = losowe.Next(0, 9);
+            }
+            foreach (int x in A)
+            {
+                Console.Write(" " + x);
+            } 
+            Console.WriteLine();
+            Console.WriteLine("Przywodca ciągu jest " + dziel_i_zwyciezaj(A, 0, A.Length - 1));
+            Console.WriteLine("Złożoność obliczeniowa tego algorytmu to O(n log n) ");
+            Console.ReadKey();
+        }
+    }
+}
