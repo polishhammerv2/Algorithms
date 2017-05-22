@@ -1,0 +1,70 @@
+using System;
+ 
+// Stos napisany za pomocą http://www.sanfoundry.com/c-program-stack-implementation/
+// Implementacja stosu wykorzystująca tablicę
+ 
+namespace Obrotnica_Kolejowa {
+    class Stack {
+ 
+        private int[] stk;
+        private int top = -1; // najwyższy index w tablicy
+ 
+        // Dodaj alement na górę stosu
+        public void Push(int n) {
+ 
+            top++;
+            if (stk == null) { // stos pusty = tworzę 1 elemntową tablicę
+                stk = new int[1];
+            }
+            else { // tworzę tablicę o 1 większą i umieszczam w niej dane
+                int[] tmp = stk;
+                stk = new int[top + 1];
+                Array.Copy(tmp, stk, top);
+            }
+ 
+            stk[top] = n;
+        }
+ 
+        // Zdjęcie najwyższego elementu ze stosu
+        public int Pop() {
+ 
+            if (top == -1) {
+                return -1; // stos pusty, zapobiega błędowi IndexException
+            }
+            else {
+ 
+                return stk[top--];
+            }
+ 
+        }
+ 
+        // Podglądanie najwyższego elementu (nie użyte)
+        public int Peek() {
+            if (top == -1) {
+                return -1;
+            }
+            else {
+                return stk[top];
+            }
+        }
+ 
+        // Zwraca ilość elementów na stosie
+        public int Count() {
+            return top + 1;
+        }
+ 
+        // Własna funkcja do wyświetlenia zawartości stosu
+        public override string ToString() {
+            string wyjscie = "";
+ 
+            for (int i = top; i >= 0; i--) {
+                wyjscie += stk[i] + " ";
+   
+            }
+ 
+            return wyjscie;
+ 
+        }
+ 
+    }
+}
