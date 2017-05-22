@@ -1,0 +1,127 @@
+using System;
+ 
+namespace Obrotnica_Kolejowa {
+    class Program {
+ 
+        static int liczba_torów;
+        static int pojemność_obrotnicy;
+        static Stack[] tory; // tablica stosów na zawartość torów
+        static Stack zawartosc_obrotnicy; // stos na zawartość obrotnicy
+ 
+        static int stan_obrotnicy = 0; // aktualnie wybrany tor
+ 
+        static void wczytaj_zmienne() {
+ 
+            liczba_torów = int.Parse(Console.ReadLine());
+            pojemność_obrotnicy = int.Parse(Console.ReadLine());
+ 
+            zawartosc_obrotnicy = new Stack(); // inicjacja stosu na obrotnice
+ 
+            tory = new Stack[liczba_torów]; // inicjacja tablicy torów
+            string wczytana_linia;
+ 
+            for(int i = 0; i < liczba_torów; i++) {
+                tory[i] = new Stack ();
+ 
+                wczytana_linia = Console.ReadLine();
+                string[] tablica_wejsciowa = wczytana_linia.Split();
+                if(int.Parse(tablica_wejsciowa[0]) != i + 1) {
+                    string error = string.Format("for - id toru != id pętli ({0}, {1})", i+1, tablica_wejsciowa[0]);
+                    return;
+                }
+ 
+                for (int j = 1; j < tablica_wejsciowa.Length; j++) {
+                    //Console.WriteLine("Dodaje {0} do {1}", int.Parse(tablica_wejsciowa[j]), i);
+                    tory[i].Push(int.Parse(tablica_wejsciowa[j]));
+                }
+            }
+ 
+            // zapełnienie stosu
+            foreach (string s in Console.ReadLine().Split()) {
+                zawartosc_obrotnicy.Push(int.Parse(s));
+            }
+        }
+ 
+        // wypisanie wyniku programu
+        static void wypisz_zmienne() {
+ 
+            Console.WriteLine("Liczba torów: " + liczba_torów);
+            Console.WriteLine("Pojemność obrotnicy: " + pojemność_obrotnicy);
+ 
+            Console.WriteLine("Obrotnica wskazuje na tor: {0}", stan_obrotnicy+1);
+ 
+            for (int i = 0; i < liczba_torów; i++) {
+                Console.WriteLine("{0}: {1}", i+1, tory[i]);
+            }
+ 
+            Console.WriteLine("Zawartosć obrotnicy:");
+            Console.WriteLine(zawartosc_obrotnicy);
+ 
+ 
+        }
+ 
+ 
+        static void odczyt_rozkazow() {
+ 
+            while (true) {
+                Console.Clear();
+                wypisz_zmienne();
+ 
+                string[] zadanie = Console.ReadLine().Split();
+ 
+                switch (zadanie[0]) {
+                    case "r":
+                        stan_obrotnicy = (stan_obrotnicy + int.Parse(zadanie[1])) % liczba_torów;
+                        break;
+ 
+                    case "l":
+                        stan_obrotnicy = (((stan_obrotnicy - int.Parse(zadanie[1])) % liczba_torów) + liczba_torów) % liczba_torów;
+                        break;
+                        /* not-negative modulo
+                        int mod(int a, int n) {
+                            return ((a % n) + n) % n;
+                        }
+                        */
+                        // kod na dodatnie modulo z internetu bo -2 % 5 w c# to -2 a my potrzebujemy dodatni index czyli -2 % 5 = 3
+ 
+                    case "i": {
+                       
+                        for(int i = 0; i < int.Parse(zadanie[1]); i++) {
+                            if (zawartosc_obrotnicy.Count() < pojemność_obrotnicy) {
+                                zawartosc_obrotnicy.Push(tory[stan_obrotnicy].Pop());
+                            }
+                        }
+ 
+                        break;
+                    }
+ 
+                    case "o": {
+ 
+                        for (int i = 0; i < int.Parse(zadanie[1]); i++) {
+ 
+                            if (zawartosc_obrotnicy.Count() > 0) {
+                                tory[stan_obrotnicy].Push(zawartosc_obrotnicy.Pop());
+                            }
+                        }
+ 
+                        break;
+                    }
+ 
+ 
+                    default:
+                        return;
+ 
+                }
+            }
+ 
+        }
+ 
+ 
+        static void Main(string[] args) {
+            wczytaj_zmienne();
+            odczyt_rozkazow(); // <- główny kod algorytmu
+            wypisz_zmienne();
+            Console.ReadKey();
+        }
+    }
+}
